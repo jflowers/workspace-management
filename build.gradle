@@ -1,0 +1,31 @@
+
+task createSfx << {
+	ant.mkdir(dir: 'build')
+	ant.exec(
+		dir: 'src',
+		executable: 'C:\\Program Files (x86)\\7-Zip\\7z.exe',
+		failonerror: false,
+		vmlauncher: false,
+		resultproperty:"cmdExit",
+		outputproperty:"cmdOut",
+        errorproperty: "cmdErr"
+	) {
+		arg(line: 'a')
+		arg(line: '-t7z')
+		arg(line: '..\\build\\Workspace-Setup.exe')
+		arg(line: '.\\')
+		arg(line: '-sfx')
+	}
+	
+	println "return code:  ${ant.project.properties.cmdExit}"
+	println """stderr:
+${ant.project.properties.cmdErr}
+################################"""
+	println """stdout:
+${ ant.project.properties.cmdOut}
+################################"""
+	
+	if (ant.project.properties.cmdExit != '0') {
+		throw new GradleException('Filed to create sfx file.')
+	}
+}
