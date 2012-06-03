@@ -27,7 +27,7 @@ ${ ant.project.properties.cmdOut}
 	if (ant.project.properties.cmdExit != '0') {
 		throw new GradleException('Filed to create 7z file.')
 	}
-	String copyCommand = 'cmd /C copy /Y /b "C:\\Program Files (x86)\\7-Zip\\7z.sfx" + src\\config.txt + build\\Workspace-Setup.7z build\\Workspace-Setup.exe'
+	String copyCommand = 'cmd /C copy /Y /b "C:\\Program Files (x86)\\7-Zip\\7zsd.sfx" + src\\config.txt + build\\Workspace-Setup.7z build\\Workspace-Setup.exe'
 	println copyCommand
 	
 	String output = copyCommand.execute().text
