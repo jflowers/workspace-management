@@ -1,8 +1,12 @@
 
+task clean(type: Delete) {
+    delete 'build'
+}
+
 task createSfx << {
 	ant.mkdir(dir: 'build')
 	ant.exec(
-		dir: 'src',
+		dir: 'SfxRoot',
 		executable: 'C:\\Program Files (x86)\\7-Zip\\7z.exe',
 		failonerror: false,
 		vmlauncher: false,
