@@ -12,9 +12,8 @@ task createSfx << {
 	) {
 		arg(line: 'a')
 		arg(line: '-t7z')
-		arg(line: '..\\build\\Workspace-Setup.exe')
+		arg(line: '..\\build\\Workspace-Setup.7z')
 		arg(line: '.\\')
-		arg(line: '-sfx')
 	}
 	
 	println "return code:  ${ant.project.properties.cmdExit}"
@@ -26,6 +25,15 @@ ${ ant.project.properties.cmdOut}
 ################################"""
 	
 	if (ant.project.properties.cmdExit != '0') {
+		throw new GradleException('Filed to create 7z file.')
+	}
+	String copyCommand = 'cmd /C copy /Y /b "C:\\Program Files (x86)\\7-Zip\\7z.sfx" + src\\config.txt + build\\Workspace-Setup.7z build\\Workspace-Setup.exe'
+	println copyCommand
+	
+	String output = copyCommand.execute().text
+	println output
+	
+	if (!(new File('build/Workspace-Setup.exe')).exists()) {
 		throw new GradleException('Filed to create sfx file.')
 	}
 }
