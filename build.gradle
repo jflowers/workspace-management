@@ -1,10 +1,8 @@
+version = '1.0'
 
-task clean(type: Delete) {
-    delete 'build'
-}
+ant.mkdir(dir: 'build')
 
 task createSfx << {
-	ant.mkdir(dir: 'build')
 	ant.exec(
 		dir: 'SfxRoot',
 		executable: 'C:\\Program Files (x86)\\7-Zip\\7z.exe',
@@ -40,4 +38,13 @@ ${ ant.project.properties.cmdOut}
 	if (!(new File('build/Workspace-Setup.exe')).exists()) {
 		throw new GradleException('Filed to create sfx file.')
 	}
+}
+
+task createCookbook(type: Tar){
+    compression = Compression.GZIP 
+	from 'Chef'
+	exclude 'node.json'
+    baseName = 'chef-solo-cookbooks'
+	extension = 'tar.gz'
+	destinationDir = new File('build')
 }
