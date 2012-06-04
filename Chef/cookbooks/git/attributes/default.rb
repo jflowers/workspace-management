@@ -19,9 +19,9 @@
 
 case platform
 when 'windows'
-  set[:git][:version] = "1.7.9-preview20120201"
+  set[:git][:version] = "1.7.10-preview20120409"
   set[:git][:url] = "http://msysgit.googlecode.com/files/Git-#{node[:git][:version]}.exe"
-  set[:git][:checksum] = "0627394709375140d1e54e923983d259a60f9d8e"
+  set[:git][:checksum] = "78f764d486640e40fa041d584ade8b0809589740"
 when "mac_os_x"
   default[:git][:osx_dmg][:app_name]    = "git-1.7.9.4-intel-universal-snow-leopard"
   default[:git][:osx_dmg][:volumes_dir] = "Git 1.7.9.4 Snow Leopard Intel Universal"

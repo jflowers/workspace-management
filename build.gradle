@@ -2,6 +2,10 @@ version = '1.0'
 
 ant.mkdir(dir: 'build')
 
+task clean(type: Delete) {
+    delete 'build'
+}
+
 task createSfx << {
 	ant.exec(
 		dir: 'SfxRoot',
@@ -56,3 +60,9 @@ task publishCookbook(type:Exec, dependsOn: 'createCookbook') {
 task publishNodeConfig(type:Exec) {
   commandLine 'cmd', '/c', 'mvn deploy:deploy-file -Durl=https://nexus.repo:8443/nexus/content/repositories/thirdparty -DrepositoryId=nexus -Dfile=C:/Projects/workspace-management/Chef/node.json -DgroupId=com.agilex.chef -DartifactId=node -Dversion=1.0 -Dpackaging=json'
 }
+
+task build(dependsOn: ['createCookbook', 'createSfx']) {}
+
+task publish(dependsOn: ['publishCookbook', 'publishNodeConfig']) {}
+
+task all(dependsOn: ['build', 'publish']) {}
