@@ -1,5 +1,5 @@
 
-SET PATH=C:\Ruby193\bin;C:\opscode\chef\bin;%PATH%
+SET PATH=C:\Ruby193\bin;C:\opscode\chef\bin;C:\Program Files (x86)\Git\cmd;%PATH%
 
 IF NOT EXIST C:\Ruby193\bin\ruby.exe rubyinstaller-1.9.3-p194.exe /silent
 ::gem update --system
