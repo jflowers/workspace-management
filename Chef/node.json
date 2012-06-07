@@ -3,6 +3,7 @@
 	"recipe[git]", 
 	"recipe[tortoisegit]", 
 	"recipe[get_git_source]", 
-	"recipe[springsource_sts]" 
+	"recipe[springsource_sts]" , 
+	"recipe[java]"
   ]
 }

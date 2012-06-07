@@ -10,5 +10,5 @@
 windows_zipfile "c:/Program Files" do
   source node['springsource_sts']['source']
   action :unzip
-  not_if {::File.exists?("c:/Program Files/springsource/sts-2.9.2.RELEASE/STS.exe")}
+  not_if {File.exists?("c:/Program Files/springsource/sts-2.9.2.RELEASE/STS.exe")}
 end

@@ -2,7 +2,7 @@
 # Cookbook Name:: get_git_source
 # Recipe:: default
 #
-# Copyright 2012, YOUR_COMPANY_NAME
+# Copyright 2012, Agilex
 #
 # All rights reserved - Do Not Redistribute
 #
