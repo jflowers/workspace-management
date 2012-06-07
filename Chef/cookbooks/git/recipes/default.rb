@@ -32,6 +32,10 @@ when "windows"
     action :install
     not_if { File.exists? 'C:\Program Files (x86)\Git\bin\git.exe' }
   end
+  
+  windows_path 'C:\Program Files (x86)\Git\cmd' do
+    action :add
+  end
 when "mac_os_x"
   dmg_package "GitOSX-Installer" do
     app node[:git][:osx_dmg][:app_name]

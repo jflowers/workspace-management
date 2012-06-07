@@ -9,7 +9,7 @@
 
 dir = node['get_git_source']['dir']
 if !File.directory?(dir)
-	Dir.mkdir(dir)
+	exec("mkdir #{dir}")
 end
 
 ruby_block "clone_git_repo" do
