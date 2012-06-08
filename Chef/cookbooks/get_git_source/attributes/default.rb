@@ -7,5 +7,5 @@
 # All rights reserved - Do Not Redistribute
 #
 
-default['get_git_source']['dir'] = "C:\\Projects\\workspace-management"
-default['get_git_source']['url'] = "https://github.com/jflowers/workspace-management.git"
+default['get_git_source']['dir'] = "C:\\Projects\\virgo.sample-greenpages"
+default['get_git_source']['url'] = "https://github.com/jflowers/virgo.sample-greenpages.git"

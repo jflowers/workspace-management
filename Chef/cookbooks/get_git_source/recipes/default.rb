@@ -8,8 +8,11 @@
 #
 
 dir = node['get_git_source']['dir']
-if !File.directory?(dir)
-	exec("mkdir #{dir}")
+
+directory dir do
+  inherits true
+  recursive true
+  action :create
 end
 
 ruby_block "clone_git_repo" do

@@ -7,8 +7,10 @@
 # All rights reserved - Do Not Redistribute
 #
 
-if !File.directory?('c:/Tools/Sysinternals')
-	exec("mkdir c:\\Tools\\Sysinternals")
+directory 'c:/Tools/Sysinternals' do
+  inherits true
+  recursive true
+  action :create
 end
 
 windows_zipfile "c:/Tools/Sysinternals" do

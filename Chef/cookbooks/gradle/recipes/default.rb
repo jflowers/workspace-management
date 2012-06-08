@@ -7,6 +7,12 @@
 # All rights reserved - Do Not Redistribute
 #
 
+directory 'c:/Tools/gradle' do
+  inherits true
+  recursive true
+  action :create
+end
+
 windows_zipfile "c:/Tools/gradle" do
   source node['gradle']['source']
   action :unzip

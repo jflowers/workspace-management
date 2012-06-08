@@ -7,6 +7,7 @@
 	"recipe[java]", 
 	"recipe[sysinternals]", 
 	"recipe[virgo]", 
-	"recipe[gradle]"
+	"recipe[gradle]",
+	"recipe[notepadplusplus]"
   ]
 }
