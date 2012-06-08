@@ -4,6 +4,9 @@
 	"recipe[tortoisegit]", 
 	"recipe[get_git_source]", 
 	"recipe[springsource_sts]" , 
-	"recipe[java]"
+	"recipe[java]", 
+	"recipe[sysinternals]", 
+	"recipe[virgo]", 
+	"recipe[gradle]"
   ]
 }
