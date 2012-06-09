@@ -9,6 +9,7 @@
 	"recipe[virgo]", 
 	"recipe[gradle]",
 	"recipe[notepadplusplus]",
-	"recipe[maven]"
+	"recipe[maven]",
+	"recipe[groovy]"
   ]
 }
